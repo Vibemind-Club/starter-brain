@@ -38,8 +38,6 @@ Three small controlled experiments on toy tasks, one purpose each. Their numbers
 
 ## Layer 1: real-scale controlled wave (complete)
 
-Preliminary summary; the consolidated write-up is pending an independent review of the full suite.
-
 **The setup.** 41 runs: 8 cells of 5 trials each, plus a pilot run, on real open-source host repositories (nanoid at 791 lines of code, validator.js at 24k, undici at 130k), with real-shaped multi-file, test-carrying tasks instead of toy padding. Every session ran on a bare, verified-stock Claude Code profile (no custom instructions, no hooks, no extensions), so the baseline is stock behavior. Every run was independently re-verified: required-case tables re-run, the session's own tests re-run, the host repo's full pre-existing suite re-run, and each commit's file set inspected. All 41 runs passed. Total spend: $69.98. One measurement note travels with everything below: the benchmark machine was in active use throughout, so wall-clock figures are directional; token and dollar figures are exact.
 
 **Speed and predictability.** At three parallel tasks (Sonnet, medium repo, medians of 5 trials), parallel-isolated finished in 259 s against serial's 547 s: a 2.11x median speedup on real tasks. The second half of the claim matters as much: serial wall clock swung from 325 to 1005 seconds across trials, while isolated stayed within 228 to 266. Isolation buys speed and tight delivery variance; the toy pilot's 2.79x may only be cited as a toy-scale figure.
@@ -54,6 +52,30 @@ Preliminary summary; the consolidated write-up is pending an independent review 
 
 **Caveats (these are the credibility).** Five trials per cell gives spread, not statistical power; treat 2.11x as "about 2x, with isolation removing the variance." Tasks were well-scoped with exhaustive specs, deliberately measuring the regime a good brief produces. Wall clock is directional throughout (shared machine). Two coder tiers only; no Opus-class coder in this wave. And the pilot's token-savings headline is explicitly dead at real scale: only the speedup and worst-configuration findings carried.
 
-## Layers 2 and 3 (not yet run)
+## Layer 2: does a smarter coordinator pay for itself? (complete)
 
-Layer 2 puts an orchestrator in the loop: the same fixed workload handed to orchestrator sessions at different model tiers, measured end to end, to test whether a smarter orchestrator pays for itself. Layer 3 adds long-task anchor runs and a locked holdout benchmark, committed in advance and never fitted on, for validating predictions. Results will be published here when they land.
+**The setup.** The same fixed three-task workload handed to a single coordinating agent (the kind that plans a batch and hands out the work) at three model tiers, measured end to end, three trials per tier.
+
+**Reliability was not the story; strategy was.** Every tier delivered all three tasks on every trial. What the tier bought was the quality of the plan, and the plan was near-deterministic per tier: the top-tier model implemented all three tasks itself (cheapest and fastest at this size); the mid-tier model handed them out one at a time in sequence (the same dollars but twice the wall clock, a serial-dispatch tax with no return); the highest-tier model implemented them itself at about 1.9x the price.
+
+**The finding that pairs with Layer 1, and the one that matters most.** Layer 1 measured that parallel, isolated lanes are the best way to run a batch. Layer 2 measured what a coordinating agent actually chooses when handed the same batch, and across nine runs at three model tiers, including the very top tier, not one of them chose that shape on its own. None split the work to run in parallel; none sent the simple parts to a cheaper model. Not once. The best-measured strategy does not emerge from a smarter model. It has to be encoded.
+
+**The recommendation, scoped.** On these small batches, the top-tier coordinator was the value point, smart enough to decline pointless delegation; the mid-tier was reliable but strategically wasteful. This is the small-batch regime. Delegation's payoff is a many-or-large-task property, the Layer 1 scaling curve, which this cell deliberately does not reach.
+
+## Layer 3: predicting a benchmark before it ran (complete)
+
+**The instrument.** Before this layer ran, a simple model was fitted on the earlier scaling data and used to predict a configuration it had never seen: four parallel isolated tasks on the medium repo. The prediction was written to a file and timestamped before the run. Then the run happened.
+
+| Metric | Predicted (band) | Measured | Result |
+|---|---|---|---|
+| Output tokens | 52,500 (41,500 to 63,500) | 48,679 | inside band |
+| Dollars | $2.44 ($2.14 to $2.73) | $2.26 | inside band |
+| Wall clock | 267 s (205 to 384) | 275.6 s | inside band |
+
+All three landed inside their pre-registered bands. The honest scope, stated plainly: this is an interpolation. The predicted point sits between two points the model was fitted on, not out in unknown territory, and it is cited as an interpolation success, not proof the model works everywhere. Within that scope, the estimator predicted its own sealed benchmark within about 8 percent on every metric. That is what makes the savings estimate on the site an instrument rather than an illustration.
+
+**The large-task anchor.** One larger, cohesive feature (fifteen functions across three modules, 102 exact cases) run two ways, one measured point each, an anchor rather than a distribution: serial finished in 15.7 minutes, parallel-isolated in 5.2, a 3.03x speedup, up from about 2x on the small tasks. At this size the token story flips too: isolated used 36 percent fewer output tokens than serial, and the metered-dollar premium of isolation shrank from 26 percent to 8 percent, because the fixed per-session cost is spread over more real work. Bigger tasks make isolation's advantage larger, not smaller. Single measured point per mode; stated as an anchor, not a rate.
+
+## The dataset, closed
+
+69 measured runs across all layers, about $104 of verified spend, every success re-verified from outside the session. What the full dataset supports: parallel-isolated is the best-measured worker configuration (about 2x speed with tight variance at small scale, growing toward 3x on a large feature, with flat batch wall as the batch grows); naive shared-checkout parallelism is the worst; a cheap dispatched worker clears well-specified tasks at a fraction of the cost; and the best configuration has to be encoded, because no model chose it on its own. What it does not support, and we do not claim: any quality-degradation number (no rubric; every run passed identical case tables), a shared-checkout failure rate (none observed; the tax is soft, prevention is by construction), the thirty-to-sixty-minute task region (measured to about sixteen minutes, extrapolated beyond), and coordinator or coder economics on vague tasks (the whole suite is exhaustively specified). The caveats are the credibility, and they are the same across every layer: this is the well-specified, scoped regime, and every ratio in it is real.

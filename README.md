@@ -14,13 +14,13 @@ Give the agent a brain: a small set of working rules it reads the moment it star
 
 ## What we do
 
-We watch six feeds: the [Claude Code changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md), the [Claude platform release notes](https://platform.claude.com/docs/en/release-notes/overview), [Anthropic news](https://www.anthropic.com/news), [Simon Willison's blog](https://simonwillison.net/tags/anthropic/), [Hacker News](https://news.ycombinator.com), and [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/). When something changes, we turn it into a working rule that clears one bar: it is **sourced**, with a link where you can confirm the claim yourself, or it is **self-evident**, a mechanism you can check by reasoning about how the tools work. No arguments.
+We watch six feeds: the [Claude Code changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md), the [Claude platform release notes](https://platform.claude.com/docs/en/release-notes/overview), [Anthropic news](https://www.anthropic.com/news), [Simon Willison's blog](https://simonwillison.net/tags/anthropic/), [Hacker News](https://news.ycombinator.com), and [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/). When something changes, we turn it into a working rule that clears one bar: it is **sourced**, with a link where you can confirm the claim yourself, or it is **self-evident**, a mechanism you can check by reasoning about how the tools work.
 
 One recent pass through that loop, whole:
 
-> **They shipped:** Claude Code v2.1.198 made subagents run in the background by default ([changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)).
+> **They shipped:** Claude Sonnet 5 launched as the new default model. Buried in the announcement: its tokenizer turns the same text into roughly 30% more tokens ([news](https://www.anthropic.com/news/claude-sonnet-5)).
 >
-> **The brain now:** treats parallel agents as the normal case and keeps concurrent work on separate files.
+> **The brain now:** recalculated how long a session should run before it gets expensive, and put the date the introductory pricing ends on its calendar. The splashy part of a release is the new model. The part that quietly changes your bill is the part you miss, and the part we watch for.
 
 This repository is that method's free output: `CLAUDE-STARTER.md` is the brain you paste into your project, and `GUIDELINES.md` is the compiled rules with their receipts. The feed list with one line on each lives in `SOURCES.md`.
 

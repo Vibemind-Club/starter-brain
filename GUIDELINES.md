@@ -74,3 +74,21 @@ Basis: mechanism.
 A notes file only grows; nothing removes a stale rule except you. Whatever the file contains gets read and followed at every boot, current or not, so an outdated instruction keeps steering new work until someone deletes it. Put consolidation on a schedule: merge duplicates, delete dead rules, and date what remains.
 
 Basis: mechanism.
+
+### 12. Plan before you build
+
+For anything past a one-line change, have the agent lay out what it will touch and how before it edits a file. Claude Code ships a Plan Mode for exactly this: it tells the model to "research and propose changes without making them," reading and exploring first and writing a plan you approve before any edit. A wrong assumption caught in a plan costs a sentence to fix; the same wrong assumption caught after two hundred lines of edits costs the two hundred lines.
+
+Source: Claude Code permission modes (Plan Mode). https://code.claude.com/docs/en/permission-modes
+
+### 13. Give the agent an exact target, not a vague ask
+
+A vague task ("clean this up," "make it better") forces the agent to guess what you meant and explore to fill the gap, and every guess is a place it can guess wrong. A task with a concrete definition of done (the exact function signature, the expected output, the cases that must pass) leaves one target the agent can check itself against. The sharper the target, the faster and more repeatable the result, because there is nothing left to infer.
+
+Basis: mechanism.
+
+### 14. Commit in small, verified steps
+
+Version control can only return you to a state you actually committed. One large uncommitted change is all-or-nothing: your only rollback is to discard the whole thing. A run of small commits, each verified before the next, makes every step a checkpoint you can return to. Claude Code's own checkpoints give you a session-level undo, but they do not track files changed by shell commands (a deleted or moved file is invisible to a rewind), so git commits stay the durable safety net.
+
+Source: Claude Code checkpointing (local-undo scope and its bash caveat). https://code.claude.com/docs/en/checkpointing
