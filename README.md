@@ -10,7 +10,7 @@ And the ground under the guidance keeps moving. Default models change and the to
 
 ## The idea
 
-Give the agent a brain: a small set of working rules it reads the moment it starts, so it boots already knowing how to behave. Keep those rules current by actually watching the sources, instead of assuming last month's facts still hold.
+Give the agent a brain: a small set of working rules it reads the moment it starts, so it boots already knowing how to behave. The same brain keeps your project's memory in a notes file, read at the start of every session and written at the end, so a fresh session opens caught up and a finished one closes with nothing lost. You stop re-explaining, and you stop losing what you decided. And the rules themselves stay current by watching the sources, instead of trusting last month's facts.
 
 ## What we do
 
@@ -27,8 +27,6 @@ This repository is that method's free output: `CLAUDE-STARTER.md` is the brain y
 We also measure what these rules cost and save, in controlled experiments published with their caveats: see [`EXPERIMENTS.md`](EXPERIMENTS.md).
 
 ## Quickstart
-
-Five minutes. No account, no installer, nothing to trust but a repo you can read.
 
 1. Get the file.
 
@@ -52,7 +50,7 @@ Five minutes. No account, no installer, nothing to trust but a repo you can read
 
 ## The full product
 
-This starter brain is the free slice of VibeMind. The full version is an app: the same brain kept continuously current as the sources change, plus mission control for running several agents at once. It lives at [vibemind.club](https://vibemind.club).
+This starter brain is the free slice of VibeMind, and we keep it maintained: re-grab the repo whenever you want the latest rules. How it runs a session, opening caught up, closing clean, checking its work before it claims done, is the real thing, the same discipline the paid product runs on. The full version is an app that keeps the brain current for you, automatically and continuously, and adds mission control for running several sessions at once instead of one in a terminal. It lives at [vibemind.club](https://vibemind.club).
 
 ## License
 
