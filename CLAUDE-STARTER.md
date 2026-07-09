@@ -65,7 +65,7 @@ When the user types `board` (just that word), render a status board from `NOTES.
   done    {what finished this session}
   open    {open questions}
   next    {next up}
-└─────────────────────────────────────────
+└────────────────────────────────────────
 ```
 
 One row per line; write `none` for an empty section. The board is a read, not new work: rendering it changes no files.

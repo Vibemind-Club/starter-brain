@@ -69,7 +69,7 @@ Type `board` for the whole picture. On day one it is empty:
   done    none
   open    none
   next    none
-└─────────────────────────────────────────
+└────────────────────────────────────────
 ```
 
 After a day of work, it is your project's memory at a glance:
@@ -81,7 +81,7 @@ After a day of work, it is your project's memory at a glance:
   done    reset-token model + migration; test email sends
   open    expire reset tokens at 1h or 24h?
   next    reset-form UI, then the success page
-└─────────────────────────────────────────
+└────────────────────────────────────────
 ```
 
 ## The full product
