@@ -18,9 +18,9 @@ We watch six feeds: the [Claude Code changelog](https://github.com/anthropics/cl
 
 One recent pass through that loop, whole:
 
-> **They shipped:** Claude Sonnet 5 launched as the new default model. Buried in the announcement: its tokenizer turns the same text into roughly 30% more tokens ([news](https://www.anthropic.com/news/claude-sonnet-5)).
+> **They shipped:** Claude Code added a rule that blocks an agent from tampering with its own session transcript, the record of what it actually did ([changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)).
 >
-> **The brain now:** recalculated how long a session should run before it gets expensive, and put the date the introductory pricing ends on its calendar. The splashy part of a release is the new model. The part that quietly changes your bill is the part you miss, and the part we watch for.
+> **The brain now:** was never going to trust that record anyway. It treats "done" as a claim and checks the real result, the served file, the passing test, before the work counts as finished. An agent can tell you it worked. The brain checks whether it did.
 
 This repository is that method's free output: `CLAUDE-STARTER.md` is the brain you paste into your project, and `GUIDELINES.md` is the compiled rules with their receipts. The feed list with one line on each lives in `SOURCES.md`.
 
@@ -48,9 +48,53 @@ We also measure what these rules cost and save, in controlled experiments publis
 
 **A status board on demand.** Type `board` and the session renders a compact ASCII summary: current task, what changed since last session, what finished in this one, open questions, next up. No dashboard, no service, just your notes read back in one clean block.
 
+## See it
+
+Open a session and the front desk greets you, already caught up from the notes:
+
+```
+∿∿∿ VibeMind ∿∿∿  starter brain
+
+  thalamus  · front desk online
+  notes     · loaded
+  task      · wire the password-reset email
+```
+
+Type `board` for the whole picture. On day one it is empty:
+
+```
+┌─ board ────────────────────────────────
+  task    none yet
+  since   none
+  done    none
+  open    none
+  next    none
+└─────────────────────────────────────────
+```
+
+After a day of work, it is your project's memory at a glance:
+
+```
+┌─ board ────────────────────────────────
+  task    wire the password-reset email
+  since   2026-07-08  shipped the login rate-limiter
+  done    reset-token model + migration; test email sends
+  open    expire reset tokens at 1h or 24h?
+  next    reset-form UI, then the success page
+└─────────────────────────────────────────
+```
+
 ## The full product
 
-This starter brain is the free slice of VibeMind, and we keep it maintained: re-grab the repo whenever you want the latest rules. How it runs a session, opening caught up, closing clean, checking its work before it claims done, is the real thing, the same discipline the paid product runs on. The full version is an app that keeps the brain current for you, automatically and continuously, and adds mission control for running several sessions at once instead of one in a terminal. It lives at [vibemind.club](https://vibemind.club).
+This starter brain is the free slice of VibeMind, and it is a real brain, not a teaser: the session discipline it runs on, opening caught up, closing clean, checking its work before it claims done, is the same discipline the paid product runs on. We keep it maintained, so re-grab the repo whenever you want the latest rules.
+
+The full product runs a more powerful brain. Three things the paste-in file cannot do on its own:
+
+- **It stays current on its own.** The starter is a snapshot you re-copy by hand. The full brain updates itself continuously, so it never drifts behind the model, pricing, and policy changes the rules depend on.
+- **It commands the machine.** A terminal runs one session at a time, and the board above is text you type up. The full brain runs many sessions at once in isolated lanes, and that board becomes a live visual dashboard, mission control for everything in flight. That parallel-isolated setup is the exact configuration our own experiments measured as the best way to work, and the one no model chooses on its own.
+- **It remembers wider.** The starter keeps one project's notes. The full brain carries memory across projects, and on a team it adds a shared layer every seat inherits.
+
+The starter gets you the discipline. The full brain keeps it current, runs it at scale, and remembers across everything you build. It lives at [vibemind.club](https://vibemind.club).
 
 ## License
 
