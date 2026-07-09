@@ -16,11 +16,11 @@ Give the agent a brain: a small set of working rules it reads the moment it star
 
 We watch six feeds: the [Claude Code changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md), the [Claude platform release notes](https://platform.claude.com/docs/en/release-notes/overview), [Anthropic news](https://www.anthropic.com/news), [Simon Willison's blog](https://simonwillison.net/tags/anthropic/), [Hacker News](https://news.ycombinator.com), and [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/). When something changes, we turn it into a working rule that clears one bar: it is **sourced**, with a link where you can confirm the claim yourself, or it is **self-evident**, a mechanism you can check by reasoning about how the tools work.
 
-One recent pass through that loop, whole:
+One pass through that loop, whole:
 
-> **They shipped:** Claude Code added a rule that blocks an agent from tampering with its own session transcript, the record of what it actually did ([changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)).
+> **They shipped:** Claude Code will auto-summarize a conversation once it grows too big to fit, so a long session can keep going ([changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)).
 >
-> **The brain now:** was never going to trust that record anyway. It treats "done" as a claim and checks the real result, the served file, the passing test, before the work counts as finished. An agent can tell you it worked. The brain checks whether it did.
+> **The brain now:** keeps your project's memory out of the conversation to begin with, in a notes file it reads fresh each session. There is nothing to summarize, so nothing gets quietly dropped. The tool's answer to a full context is to compress it. The brain's answer is to never fill it with your memory in the first place.
 
 This repository is that method's free output: `CLAUDE-STARTER.md` is the brain you paste into your project, and `GUIDELINES.md` is the compiled rules with their receipts. The feed list with one line on each lives in `SOURCES.md`.
 
