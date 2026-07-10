@@ -84,6 +84,12 @@ After a day of work, it is your project's memory at a glance:
 └────────────────────────────────────────
 ```
 
+## Backing up, and removing it
+
+Your entire brain is two files: the block in your `CLAUDE.md` (the rules) and `NOTES.md` (the memory). Copy those two files anywhere and you have a full backup; commit them to your repo and it is versioned with your code.
+
+Removing it is just as small: delete everything below the horizontal rule in your `CLAUDE.md` (or the whole file, if the brain is all it contains), and delete `NOTES.md` if you do not want to keep the memory. No installer, no services, no registry. Two files in, two files out.
+
 ## The full product
 
 This starter brain is the free slice of VibeMind, and it is a real brain, not a teaser: the session discipline it runs on, opening caught up, closing clean, checking its work before it claims done, is the same discipline the paid product runs on. We keep it maintained, so re-grab the repo whenever you want the latest rules.
