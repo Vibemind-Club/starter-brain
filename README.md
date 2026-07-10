@@ -22,7 +22,7 @@ One pass through that loop, whole:
 >
 > **The brain now:** keeps your project's memory out of the conversation to begin with, in a notes file it reads fresh each session. There is nothing to summarize, so nothing gets quietly dropped. The tool's answer to a full context is to compress it. The brain's answer is to never fill it with your memory in the first place.
 
-This repository is that method's free output: `CLAUDE-STARTER.md` is the brain you paste into your project, and `GUIDELINES.md` is the compiled rules with their receipts. The feed list with one line on each lives in `SOURCES.md`.
+This repository is that method's free output: `CLAUDE-STARTER.md` is the brain you paste into your project, and `GUIDELINES.md` is the compiled rules with their receipts. The feed list with one line on each lives in `SOURCES.md`. The full running record of these passes, every entry with its source, lives at [vibemind.club/changelog](https://vibemind.club/changelog).
 
 We also measure what these rules cost and save, in controlled experiments published with their caveats: see [`EXPERIMENTS.md`](EXPERIMENTS.md).
 
