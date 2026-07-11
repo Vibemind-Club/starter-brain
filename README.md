@@ -97,7 +97,7 @@ This starter brain is the free slice of VibeMind, and it is a real brain, not a 
 The full product runs a more powerful brain. Three things the paste-in file cannot do on its own:
 
 - **It stays current on its own.** The starter is a snapshot you re-copy by hand. The full brain updates itself continuously, so it never drifts behind the model, pricing, and policy changes the rules depend on.
-- **It commands the machine.** A terminal runs one session at a time, and the board above is text you type up. The full brain runs many sessions at once in isolated lanes, and that board becomes a live visual dashboard, mission control for everything in flight. That parallel-isolated setup is the exact configuration our own experiments measured as the best way to work, and the one no model chooses on its own.
+- **It commands the machine.** A terminal runs one session at a time, and the board above is text you type up. The full brain runs many sessions at once in isolated lanes, carrying the work between them so you are never the courier pasting one agent's output into another's chat, and that board becomes a live visual dashboard, mission control for everything in flight. That parallel-isolated setup is the exact configuration our own experiments measured as the best way to work, and the one no model chooses on its own.
 - **It remembers wider.** The starter keeps one project's notes. The full brain carries memory across projects, and on a team it adds a shared layer every seat inherits.
 
 The starter gets you the discipline. The full brain keeps it current, runs it at scale, and remembers across everything you build. It lives at [vibemind.club](https://vibemind.club).
