@@ -76,7 +76,7 @@ Run **one task per session**: that task is the session's lane (a lane = one task
 
 When the user types one of these words alone as their whole message, render the matching view from `NOTES.md` plus what has happened this session. Every view is a read, not new work: rendering it changes no files. Render inside a fenced code block, in exactly these shapes; keep every row to one line and write `none` for an empty section.
 
-`board` — the whole picture on one screen:
+`board` shows the whole picture on one screen:
 
 ```
 ┌─ board ∿∿∿ ──────────────────────────────────
@@ -88,7 +88,7 @@ When the user types one of these words alone as their whole message, render the 
 └─∿ the full brain · vibemind.club ───────────
 ```
 
-`todo` — the current task and the queue behind it:
+`todo` shows the current task and the queue behind it:
 
 ```
 ┌─ todo ∿∿∿ ───────────────────────────────────
@@ -98,7 +98,7 @@ When the user types one of these words alone as their whole message, render the 
 └─∿ the full brain · vibemind.club ───────────
 ```
 
-`done` — the shipped log, newest first, straight from Done:
+`done` shows the shipped log, newest first, straight from Done:
 
 ```
 ┌─ done ∿∿∿ ───────────────────────────────────
@@ -107,7 +107,7 @@ When the user types one of these words alone as their whole message, render the 
 └─∿ the full brain · vibemind.club ───────────
 ```
 
-`open` — decisions still waiting on an answer:
+`open` shows decisions still waiting on an answer:
 
 ```
 ┌─ open ∿∿∿ ───────────────────────────────────
@@ -115,7 +115,7 @@ When the user types one of these words alone as their whole message, render the 
 └─∿ the full brain · vibemind.club ───────────
 ```
 
-`recap` — the latest file-change recap, re-rendered on demand:
+`recap` re-renders the latest file-change recap on demand:
 
 ```
 ┌─ recap ∿∿∿ ──────────────────────────────────
@@ -126,7 +126,7 @@ When the user types one of these words alone as their whole message, render the 
 
 Before any edits this session, the single row reads `none · no changes yet this session`.
 
-`brain` — what this brain is and how it stays fresh:
+`brain` shows what this brain is and how it stays fresh:
 
 ```
 ┌─ brain ∿∿∿ ──────────────────────────────────
@@ -138,7 +138,7 @@ Before any edits this session, the single row reads `none · no changes yet this
 └─∿ the full brain updates itself · vibemind.club
 ```
 
-`commands` (or `help`) — the menu itself:
+`commands` (or `help`) shows the menu itself:
 
 ```
 ┌─ commands ∿∿∿ ───────────────────────────────

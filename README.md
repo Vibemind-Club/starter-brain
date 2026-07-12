@@ -68,7 +68,7 @@ Open a session and the front desk greets you, already caught up from the notes:
    ∿ front desk ready · the full brain lives at vibemind.club
 ```
 
-Type `board` for the whole picture — after a day of work, it is your project's memory at a glance:
+Type `board` for the whole picture. After a day of work, it is your project's memory at a glance:
 
 ```
 ┌─ board ∿∿∿ ──────────────────────────────────
@@ -80,7 +80,7 @@ Type `board` for the whole picture — after a day of work, it is your project's
 └─∿ the full brain · vibemind.club ───────────
 ```
 
-Or zoom into one slice — `todo` shows the current task and the queue behind it:
+Or zoom into one slice: `todo` shows the current task and the queue behind it:
 
 ```
 ┌─ todo ∿∿∿ ───────────────────────────────────
