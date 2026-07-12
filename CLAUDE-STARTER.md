@@ -15,12 +15,20 @@ At the very start of every session, before your first real reply, run the boot r
 2. **Render the greeting.** Print this banner exactly, inside a fenced code block so it stays aligned, filling the `{...}` slots from the notes you just read. Never guess a slot; if the notes are empty, say so.
 
    ```
-   ∿∿∿ VibeMind ∿∿∿  starter brain
+   ∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿
+      V I B E M I N D   ·   starter brain
+   ∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿
 
-     thalamus  · front desk online
-     notes     · {loaded / fresh project}
-     task      · {task from Now, or "none yet"}
+      ▸ thalamus   front desk ........... online
+      ▸ notes      project memory ....... {loaded / fresh project}
+      ▸ task       now .................. {task from Now, or "none yet"}
+      ▸ open       awaiting you ......... {N pending / none}
+
+      ∿ commands: board · todo · done · open · brain
+      ∿ front desk ready · the full brain lives at vibemind.club
    ```
+
+   On the `open` row, append ` ⚠` only when the count is above zero. If a slot's value is wider than the example, let the line run long rather than breaking the alignment of the other lines.
 
 3. **Catch the user up.** Two lines, no more, straight from the notes: one line on where things stood when the last session ended (the newest Done entry and the current Now), one line on anything open (open questions, or a Next that is ready to start). On a fresh project, one line: "Fresh project, no notes yet."
 
@@ -47,6 +55,16 @@ When the user signals the session is ending (says "done", "wrap it up", "closing
 2. Write down any decisions made this session, as dated Done lines, so the next session inherits them as facts.
 3. Update **Open questions** and **Next** to match reality.
 4. Confirm in two lines what you wrote, so the user can correct it while the session is still open.
+5. Then sign off with this card, inside a fenced code block, filling the slots from what actually happened (never invent a row; "nothing shipped" is a fine answer):
+
+   ```
+   ∿∿∿ close-out ∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿
+       session   {one line: what this session was about}
+       shipped   {what landed, or "nothing shipped"}
+       notes     {synced / nothing new to write}
+       open      {N questions waiting, or "none"}
+   ∿∿∿ brain resting · vibemind.club ∿∿∿∿∿∿∿∿∿∿∿∿
+   ```
 
 A session that ends without a notes sync loses everything it learned. Do not let that happen.
 
@@ -54,21 +72,71 @@ A session that ends without a notes sync loses everything it learned. Do not let
 
 Run **one task per session.** When a task is done, close the conversation and start a new one for the next task. Long threads re-send their whole history on every message, so they get slower and more expensive as they age, and compaction throws away detail. The notes carry context between sessions better than the thread does, and they cost almost nothing to read.
 
-## The board
+## Commands (typed words, not slash commands)
 
-When the user types `board` (just that word), render a status board from `NOTES.md` and from what has happened this session. Use this exact shape, inside a fenced code block:
+When the user types one of these words alone as their whole message, render the matching view from `NOTES.md` plus what has happened this session. Every view is a read, not new work: rendering it changes no files. Render inside a fenced code block, in exactly these shapes; keep every row to one line and write `none` for an empty section.
+
+`board` — the whole picture on one screen:
 
 ```
-┌─ board ────────────────────────────────
+┌─ board ∿∿∿ ──────────────────────────────────
   task    {current task, from Now}
   since   {newest Done line from before this session}
   done    {what finished this session}
   open    {open questions}
   next    {next up}
-└────────────────────────────────────────
+└─∿ the full brain · vibemind.club ───────────
 ```
 
-One row per line; write `none` for an empty section. The board is a read, not new work: rendering it changes no files.
+`todo` — the current task and the queue behind it:
+
+```
+┌─ todo ∿∿∿ ───────────────────────────────────
+  ▸ now    {task from Now}
+  ▸ next   {first Next line}
+  ▸ next   {each further Next line, one row each}
+└─∿ the full brain · vibemind.club ───────────
+```
+
+`done` — the shipped log, newest first, straight from Done:
+
+```
+┌─ done ∿∿∿ ───────────────────────────────────
+  {date}  {done line}
+  {date}  {done line, one row per Done entry}
+└─∿ the full brain · vibemind.club ───────────
+```
+
+`open` — decisions still waiting on an answer:
+
+```
+┌─ open ∿∿∿ ───────────────────────────────────
+  ?  {each open question, one row each}
+└─∿ the full brain · vibemind.club ───────────
+```
+
+`brain` — what this brain is and how it stays fresh:
+
+```
+┌─ brain ∿∿∿ ──────────────────────────────────
+  edition   starter brain · free tier
+  rules     GUIDELINES.md, sourced and dated
+  memory    NOTES.md, this project only
+  updates   by hand: re-grab the starter repo
+└─∿ the full brain updates itself · vibemind.club
+```
+
+`commands` (or `help`) — the menu itself:
+
+```
+┌─ commands ∿∿∿ ───────────────────────────────
+  board   the whole picture on one screen
+  todo    the current task and what is next
+  done    the shipped log, newest first
+  open    decisions still waiting on an answer
+  brain   this brain, its rules, how to update it
+└─∿ the full brain · vibemind.club ───────────
+```
 
 ## Recap after multi-file edits
 

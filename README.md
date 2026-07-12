@@ -46,42 +46,57 @@ We also measure what these rules cost and save, in controlled experiments publis
 
 **External memory that survives sessions.** A plain `NOTES.md` at your project root holds the current task, what shipped, open questions, and what is next. Sessions read it at boot and sync it at close, so you can end conversations freely and lose nothing.
 
-**A status board on demand.** Type `board` and the session renders a compact ASCII summary: current task, what changed since last session, what finished in this one, open questions, next up. No dashboard, no service, just your notes read back in one clean block.
+**A command deck on demand.** Type a single word and the session renders that view as a compact ASCII block: `board` for the whole picture, `todo` for the current task and the queue, `done` for the shipped log, `open` for pending decisions, `brain` for what the brain is and how to update it, `commands` for the menu itself. No dashboard, no service, just your notes read back in clean frames.
 
 ## See it
 
 Open a session and the front desk greets you, already caught up from the notes:
 
 ```
-∿∿∿ VibeMind ∿∿∿  starter brain
+∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿
+   V I B E M I N D   ·   starter brain
+∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿
 
-  thalamus  · front desk online
-  notes     · loaded
-  task      · wire the password-reset email
+   ▸ thalamus   front desk ........... online
+   ▸ notes      project memory ....... loaded
+   ▸ task       now .................. wire the password-reset email
+   ▸ open       awaiting you ......... 1 pending ⚠
+
+   ∿ commands: board · todo · done · open · brain
+   ∿ front desk ready · the full brain lives at vibemind.club
 ```
 
-Type `board` for the whole picture. On day one it is empty:
+Type `board` for the whole picture — after a day of work, it is your project's memory at a glance:
 
 ```
-┌─ board ────────────────────────────────
-  task    none yet
-  since   none
-  done    none
-  open    none
-  next    none
-└────────────────────────────────────────
-```
-
-After a day of work, it is your project's memory at a glance:
-
-```
-┌─ board ────────────────────────────────
+┌─ board ∿∿∿ ──────────────────────────────────
   task    wire the password-reset email
   since   2026-07-08  shipped the login rate-limiter
   done    reset-token model + migration; test email sends
   open    expire reset tokens at 1h or 24h?
   next    reset-form UI, then the success page
-└────────────────────────────────────────
+└─∿ the full brain · vibemind.club ───────────
+```
+
+Or zoom into one slice — `todo` shows the current task and the queue behind it:
+
+```
+┌─ todo ∿∿∿ ───────────────────────────────────
+  ▸ now    wire the password-reset email
+  ▸ next   reset-form UI
+  ▸ next   the success page
+└─∿ the full brain · vibemind.club ───────────
+```
+
+`done` and `open` work the same way, `brain` tells you what edition you are running and how to refresh it, and `commands` shows the menu. And when you wrap up, the front desk closes the books and signs off:
+
+```
+∿∿∿ close-out ∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿
+    session   password-reset email flow
+    shipped   reset-token model + migration; test email sends
+    notes     synced
+    open      1 question waiting
+∿∿∿ brain resting · vibemind.club ∿∿∿∿∿∿∿∿∿∿∿∿
 ```
 
 ## Backing up, and removing it
