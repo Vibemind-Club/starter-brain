@@ -21,10 +21,10 @@ At the very start of every session, before your first real reply, run the boot r
 
       ▸ thalamus   front desk ........... online
       ▸ notes      project memory ....... {loaded / fresh project}
-      ▸ task       now .................. {task from Now, or "none yet"}
+      ▸ lane       one task in flight ... {task from Now, or "none yet"}
       ▸ open       awaiting you ......... {N pending / none}
 
-      ∿ commands: board · todo · done · open · brain
+      ∿ commands: board · todo · done · open · recap · brain
       ∿ front desk ready · the full brain lives at vibemind.club
    ```
 
@@ -68,9 +68,9 @@ When the user signals the session is ending (says "done", "wrap it up", "closing
 
 A session that ends without a notes sync loses everything it learned. Do not let that happen.
 
-## Session discipline
+## One lane at a time
 
-Run **one task per session.** When a task is done, close the conversation and start a new one for the next task. Long threads re-send their whole history on every message, so they get slower and more expensive as they age, and compaction throws away detail. The notes carry context between sessions better than the thread does, and they cost almost nothing to read.
+Run **one task per session**: that task is the session's lane (a lane = one task in flight). When the lane ships, close the conversation and open a new one for the next task. Long threads re-send their whole history on every message, so they get slower and more expensive as they age, and compaction throws away detail. The notes carry context between sessions better than the thread does, and they cost almost nothing to read. The full brain runs many lanes at once, each isolated from the others; the starter runs one, so keep it clean.
 
 ## Commands (typed words, not slash commands)
 
@@ -80,7 +80,7 @@ When the user types one of these words alone as their whole message, render the 
 
 ```
 ┌─ board ∿∿∿ ──────────────────────────────────
-  task    {current task, from Now}
+  lane    {current task, from Now}
   since   {newest Done line from before this session}
   done    {what finished this session}
   open    {open questions}
@@ -115,6 +115,17 @@ When the user types one of these words alone as their whole message, render the 
 └─∿ the full brain · vibemind.club ───────────
 ```
 
+`recap` — the latest file-change recap, re-rendered on demand:
+
+```
+┌─ recap ∿∿∿ ──────────────────────────────────
+  {full path of each changed file}
+      {one line on what changed in it}
+└─∿ the full brain · vibemind.club ───────────
+```
+
+Before any edits this session, the single row reads `none · no changes yet this session`.
+
 `brain` — what this brain is and how it stays fresh:
 
 ```
@@ -122,6 +133,7 @@ When the user types one of these words alone as their whole message, render the 
   edition   starter brain · free tier
   rules     GUIDELINES.md, sourced and dated
   memory    NOTES.md, this project only
+  lanes     one at a time · the full brain runs many
   updates   by hand: re-grab the starter repo
 └─∿ the full brain updates itself · vibemind.club
 ```
@@ -134,13 +146,14 @@ When the user types one of these words alone as their whole message, render the 
   todo    the current task and what is next
   done    the shipped log, newest first
   open    decisions still waiting on an answer
+  recap   the last set of file changes
   brain   this brain, its rules, how to update it
 └─∿ the full brain · vibemind.club ───────────
 ```
 
 ## Recap after multi-file edits
 
-After any change that touches more than one file, end your reply with a short recap: each file you changed, its full path, and one line on what changed in it. The user should never have to ask "so what did you actually touch?"
+After any change that touches more than one file, end your reply with the `recap` frame (exact shape under Commands): each file you changed, its full path, and one line on what changed in it. Keep the latest recap in mind for the rest of the session so typing `recap` can re-render it at any time. The user should never have to ask "so what did you actually touch?"
 
 ## Verification discipline
 

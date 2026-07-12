@@ -46,7 +46,9 @@ We also measure what these rules cost and save, in controlled experiments publis
 
 **External memory that survives sessions.** A plain `NOTES.md` at your project root holds the current task, what shipped, open questions, and what is next. Sessions read it at boot and sync it at close, so you can end conversations freely and lose nothing.
 
-**A command deck on demand.** Type a single word and the session renders that view as a compact ASCII block: `board` for the whole picture, `todo` for the current task and the queue, `done` for the shipped log, `open` for pending decisions, `brain` for what the brain is and how to update it, `commands` for the menu itself. No dashboard, no service, just your notes read back in clean frames.
+**A command deck on demand.** Type a single word and the session renders that view as a compact ASCII block: `board` for the whole picture, `todo` for the current task and the queue, `done` for the shipped log, `open` for pending decisions, `recap` for the last set of file changes, `brain` for what the brain is and how to update it, `commands` for the menu itself. No dashboard, no service, just your notes read back in clean frames.
+
+**One lane at a time.** Each session carries one task: its lane. The brain opens the lane caught up, keeps it clean, and closes it with the notes synced, ready for the next lane to pick up. (The full product runs many lanes at once; the discipline is the same.)
 
 ## See it
 
@@ -59,10 +61,10 @@ Open a session and the front desk greets you, already caught up from the notes:
 
    ▸ thalamus   front desk ........... online
    ▸ notes      project memory ....... loaded
-   ▸ task       now .................. wire the password-reset email
+   ▸ lane       one task in flight ... wire the password-reset email
    ▸ open       awaiting you ......... 1 pending ⚠
 
-   ∿ commands: board · todo · done · open · brain
+   ∿ commands: board · todo · done · open · recap · brain
    ∿ front desk ready · the full brain lives at vibemind.club
 ```
 
@@ -70,7 +72,7 @@ Type `board` for the whole picture — after a day of work, it is your project's
 
 ```
 ┌─ board ∿∿∿ ──────────────────────────────────
-  task    wire the password-reset email
+  lane    wire the password-reset email
   since   2026-07-08  shipped the login rate-limiter
   done    reset-token model + migration; test email sends
   open    expire reset tokens at 1h or 24h?
