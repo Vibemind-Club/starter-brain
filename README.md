@@ -94,11 +94,12 @@ Removing it is just as small: delete everything below the horizontal rule in you
 
 This starter brain is the free slice of VibeMind, and it is a real brain, not a teaser: the session discipline it runs on, opening caught up, closing clean, checking its work before it claims done, is the same discipline the paid product runs on. We keep it maintained, so re-grab the repo whenever you want the latest rules.
 
-The full product runs a more powerful brain. Three things the paste-in file cannot do on its own:
+The full product runs a more powerful brain. Four things the paste-in file cannot do on its own:
 
 - **It stays current on its own.** The starter is a snapshot you re-copy by hand. The full brain updates itself continuously, so it never drifts behind the model, pricing, and policy changes the rules depend on.
 - **It commands the machine.** A terminal runs one session at a time, and the board above is text you type up. The full brain runs many sessions at once in isolated lanes, carrying the work between them so you are never the courier pasting one agent's output into another's chat, and that board becomes a live visual dashboard, mission control for everything in flight. That parallel-isolated setup is the exact configuration our own experiments measured as the best way to work, and the one no model chooses on its own.
 - **It remembers wider.** The starter keeps one project's notes. The full brain carries memory across projects, and on a team it adds a shared layer every seat inherits.
+- **It imports the setup you already built.** If you have years of rules in your own `CLAUDE.md`, custom commands, and skills, the app detects them and brings them into your own layer of the brain in one click, reversibly, with a manifest that undoes exactly what it did. Your original files are never touched, and your credentials are never read. Switching costs a click, not your accumulated judgment.
 
 The starter gets you the discipline. The full brain keeps it current, runs it at scale, and remembers across everything you build. It lives at [vibemind.club](https://vibemind.club).
 
