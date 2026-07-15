@@ -48,7 +48,7 @@ We also measure what these rules cost and save, in controlled experiments publis
 
 **A command deck on demand.** Type a single word and the session renders that view as a compact ASCII block: `board` for the whole picture, `todo` for the current task and the queue, `done` for the shipped log, `open` for pending decisions, `recap` for the last set of file changes, `brain` for what the brain is and how to update it, `commands` for the menu itself. No dashboard, no service, just your notes read back in clean frames.
 
-**One lane at a time.** Each session carries one task: its lane. The brain opens the lane caught up, keeps it clean, and closes it with the notes synced, ready for the next lane to pick up. (The full product runs many lanes at once; the discipline is the same.)
+**One pathway at a time.** Each session carries one task: its pathway. The brain opens the pathway caught up, keeps it clean, and closes it with the notes synced, ready for the next pathway to pick up. (The full product runs many pathways at once; the discipline is the same.)
 
 ## See it
 
@@ -61,7 +61,7 @@ Open a session and the front desk greets you, already caught up from the notes:
 
    ▸ thalamus   front desk ........... online
    ▸ notes      project memory ....... loaded
-   ▸ lane       one task in flight ... wire the password-reset email
+   ▸ pathway    one task in flight ... wire the password-reset email
    ▸ open       awaiting you ......... 1 pending ⚠
 
    ∿ commands: board · todo · done · open · recap · brain
@@ -72,7 +72,7 @@ Type `board` for the whole picture. After a day of work, it is your project's me
 
 ```
 ┌─ board ∿∿∿ ──────────────────────────────────
-  lane    wire the password-reset email
+  pathway wire the password-reset email
   since   2026-07-08  shipped the login rate-limiter
   done    reset-token model + migration; test email sends
   open    expire reset tokens at 1h or 24h?
@@ -114,7 +114,7 @@ This starter brain is the free slice of VibeMind, and it is a real brain, not a 
 The full product runs a more powerful brain. Four things the paste-in file cannot do on its own:
 
 - **It stays current on its own.** The starter is a snapshot you re-copy by hand. The full brain updates itself continuously, so it never drifts behind the model, pricing, and policy changes the rules depend on.
-- **It commands the machine.** A terminal runs one session at a time, and the board above is text you type up. The full brain runs many sessions at once in isolated lanes, carrying the work between them so you are never the courier pasting one agent's output into another's chat, and that board becomes a live visual dashboard, mission control for everything in flight. That parallel-isolated setup is the exact configuration our own experiments measured as the best way to work, and the one no model chooses on its own.
+- **It commands the machine.** A terminal runs one session at a time, and the board above is text you type up. The full brain runs many sessions at once in isolated pathways, carrying the work between them so you are never the courier pasting one agent's output into another's chat, and that board becomes a live visual dashboard, mission control for everything in flight. That parallel-isolated setup is the exact configuration our own experiments measured as the best way to work, and the one no model chooses on its own.
 - **It remembers wider.** The starter keeps one project's notes. The full brain carries memory across projects, and on a team it adds a shared layer every seat inherits.
 - **It imports the setup you already built.** If you have years of rules in your own `CLAUDE.md`, custom commands, and skills, the app detects them and brings them into your own layer of the brain in one click, reversibly, with a manifest that undoes exactly what it did. Your original files are never touched, and your credentials are never read. Switching costs a click, not your accumulated judgment.
 

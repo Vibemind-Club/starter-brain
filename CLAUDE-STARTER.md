@@ -21,7 +21,7 @@ At the very start of every session, before your first real reply, run the boot r
 
       ▸ thalamus   front desk ........... online
       ▸ notes      project memory ....... {loaded / fresh project}
-      ▸ lane       one task in flight ... {task from Now, or "none yet"}
+      ▸ pathway    one task in flight ... {task from Now, or "none yet"}
       ▸ open       awaiting you ......... {N pending / none}
 
       ∿ commands: board · todo · done · open · recap · brain
@@ -68,9 +68,9 @@ When the user signals the session is ending (says "done", "wrap it up", "closing
 
 A session that ends without a notes sync loses everything it learned. Do not let that happen.
 
-## One lane at a time
+## One pathway at a time
 
-Run **one task per session**: that task is the session's lane (a lane = one task in flight). When the lane ships, close the conversation and open a new one for the next task. Long threads re-send their whole history on every message, so they get slower and more expensive as they age, and compaction throws away detail. The notes carry context between sessions better than the thread does, and they cost almost nothing to read. The full brain runs many lanes at once, each isolated from the others; the starter runs one, so keep it clean.
+Run **one task per session**: that task is the session's pathway (a pathway = one task in flight). When the pathway ships, close the conversation and open a new one for the next task. Long threads re-send their whole history on every message, so they get slower and more expensive as they age, and compaction throws away detail. The notes carry context between sessions better than the thread does, and they cost almost nothing to read. The full brain runs many pathways at once, each isolated from the others; the starter runs one, so keep it clean.
 
 ## Commands (typed words, not slash commands)
 
@@ -80,7 +80,7 @@ When the user types one of these words alone as their whole message, render the 
 
 ```
 ┌─ board ∿∿∿ ──────────────────────────────────
-  lane    {current task, from Now}
+  pathway {current task, from Now}
   since   {newest Done line from before this session}
   done    {what finished this session}
   open    {open questions}
@@ -133,7 +133,7 @@ Before any edits this session, the single row reads `none · no changes yet this
   edition   starter brain · free tier
   rules     GUIDELINES.md, sourced and dated
   memory    NOTES.md, this project only
-  lanes     one at a time · the full brain runs many
+  pathways  one at a time · the full brain runs many
   updates   by hand: re-grab the starter repo
 └─∿ the full brain updates itself · vibemind.club
 ```
