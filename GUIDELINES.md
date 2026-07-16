@@ -53,9 +53,9 @@ Sources: https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspen
 
 ### 8. Point automation at the metered API, not a subscription login
 
-In April 2026, Anthropic blocked Claude subscription accounts from spending their limits through third-party harnesses, and pointed affected users to API pricing as the continued channel. Consumer subscription terms are the vendor's to change on notice; the metered API is the channel built and priced for programmatic use. If your automation rides a subscription login, it rides on terms that have already moved once.
+In April 2026, Anthropic blocked Claude subscription accounts from spending their limits through third-party harnesses, and pointed affected users to API pricing as the continued channel. The policy kept moving after that: a plan to route agent workloads onto separate credits (May 13), then a pause of that plan the day it was to take effect (June 15). Consumer subscription terms are the vendor's to change on notice; the metered API is the channel built and priced for programmatic use. If your automation rides a subscription login, it rides on terms that have already moved more than once.
 
-Source: https://news.ycombinator.com/item?id=47633396
+Sources: https://thenewstack.io/anthropic-agent-sdk-credits/ (May 13, 2026) and https://thenewstack.io/anthropic-pauses-claude-agent-sdk-subscription-change/ (June 15, 2026); the April block's contemporaneous record: https://news.ycombinator.com/item?id=47633396
 
 ### 9. Ask before anything irreversible
 

@@ -1,6 +1,6 @@
 # Watched Sources
 
-The guidelines in this repo trace to real, dated changes. These are the feeds we watch to keep them current. Vendor changes come from the first four; the wider signal comes from the last two.
+The guidelines in this repo trace to real, dated changes. These are the feeds we watch to keep them current. Vendor changes come from the first three; the independent read on what they mean comes from the last.
 
 ### Claude Code changelog
 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
@@ -17,11 +17,3 @@ Official announcements: new models, new products, and company policy. The primar
 ### Simon Willison's blog
 https://simonwillison.net/tags/anthropic/
 Independent reporting and analysis of Anthropic releases, often first with the details that actually matter for practitioners.
-
-### Hacker News
-https://news.ycombinator.com
-Where policy changes surface and get stress-tested in public before the implications are fully documented anywhere else.
-
-### r/ClaudeAI
-https://www.reddit.com/r/ClaudeAI/
-Day-to-day reports from people running Claude agents: what broke, what changed, and what still works.

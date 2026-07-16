@@ -14,7 +14,7 @@ Give the agent a brain: a small set of working rules it reads the moment it star
 
 ## What we do
 
-We watch six feeds: the [Claude Code changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md), the [Claude platform release notes](https://platform.claude.com/docs/en/release-notes/overview), [Anthropic news](https://www.anthropic.com/news), [Simon Willison's blog](https://simonwillison.net/tags/anthropic/), [Hacker News](https://news.ycombinator.com), and [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/). When something changes, we turn it into a working rule that clears one bar: it is **sourced**, with a link where you can confirm the claim yourself, or it is **self-evident**, a mechanism you can check by reasoning about how the tools work.
+We watch four feeds: the [Claude Code changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md), the [Claude platform release notes](https://platform.claude.com/docs/en/release-notes/overview), [Anthropic news](https://www.anthropic.com/news), and [Simon Willison's blog](https://simonwillison.net/tags/anthropic/) for the independent read. When something changes, we turn it into a working rule that clears one bar: it is **sourced**, with a link where you can confirm the claim yourself, or it is **self-evident**, a mechanism you can check by reasoning about how the tools work.
 
 One pass through that loop, whole:
 
